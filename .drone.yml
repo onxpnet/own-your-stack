@@ -1,0 +1,23 @@
+kind: pipeline
+type: kubernetes
+name: default
+
+steps:
+- name: build-latest
+  image: plugins/kaniko
+  settings:
+    username:
+      from_secret: DOCKER_USERNAME
+    password:
+      from_secret: DOCKER_PASSWORD
+    repo: glendmaatita/own-your-stack
+    tags: latest
+  when:
+    branch: 
+    - develop
+
+trigger:
+  branch:
+  - develop
+  event:
+  - push
