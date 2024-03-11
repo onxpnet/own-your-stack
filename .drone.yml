@@ -14,10 +14,10 @@ steps:
     tags: latest
   when:
     branch: 
-    - develop
+    - main
 
 trigger:
   branch:
-  - develop
+  - main
   event:
   - push
