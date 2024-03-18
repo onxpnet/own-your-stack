@@ -1,5 +1,5 @@
 # final outcome
-FROM gcr.io/distroless/cc-debian12
+FROM alpine:3.19
 WORKDIR /app
 
 COPY . .
